@@ -1,0 +1,41 @@
+.header__line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  z-index: 20;
+}
+
+.header__search-bar,
+.header__search-form {
+  display: flex;
+}
+
+.header__logo {
+  font-size: 30px;
+  color: $red;
+  font-weight: $semi;
+}
+
+.header__search-symbol,
+.header__bookmarks {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%);
+}
+
+.header__search-input {
+  background: none;
+  border: $white solid 1px;
+  padding: 0 10px;
+  width: 0px;
+  opacity: 0;
+  transition: $normal;
+  color: $white;
+}
+
+.activate-input {
+  width: 230px;
+  opacity: 0.8;
+}

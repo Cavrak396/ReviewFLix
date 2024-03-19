@@ -1,0 +1,52 @@
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  @include after {
+    @include darker;
+    background-color: $black;
+    opacity: 0.4;
+  }
+}
+
+.banner__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.banner__text-container {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  color: $white;
+  transform: translate(-5%, -50%);
+  max-width: 700px;
+  z-index: 20;
+}
+
+.banner__text-above,
+.banner__text-title {
+  text-transform: uppercase;
+}
+
+.banner__text-title {
+  font-size: 120px;
+  font-weight: $bold;
+  margin-bottom: 20px;
+
+  .banner__text-decoration {
+    color: $red;
+  }
+}
+
+.banner__text-lines {
+  font-size: 17px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}

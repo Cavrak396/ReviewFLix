@@ -1,0 +1,61 @@
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.banner__text-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.banner__text-search,
+.banner__text-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 180px;
+  flex: 1 1 180px;
+  padding: 15px 25px;
+  border-radius: 7px;
+  font-family: $roboto;
+  font-size: 20px;
+  transition: $normal;
+  font-weight: $semi;
+}
+
+.banner__text-search {
+  background-color: $white;
+  color: $black;
+  margin-right: 27px;
+
+  @include hover {
+    background-color: $gray;
+    filter: invert(100%);
+  }
+}
+
+.banner__seachImage,
+.banner__infoImage {
+  max-width: 18px;
+  max-height: 18px;
+  margin-right: 7px;
+}
+
+.banner__text-info {
+  color: $white;
+  background-color: $gray;
+
+  .banner__infoImage {
+    filter: invert(100%);
+  }
+
+  @include hover {
+    background-color: $white;
+    color: $black;
+
+    .banner__infoImage {
+      filter: invert(0%);
+    }
+  }
+}
