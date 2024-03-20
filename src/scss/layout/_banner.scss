@@ -39,14 +39,89 @@
   font-size: 120px;
   font-weight: $bold;
   margin-bottom: 20px;
+}
 
-  .banner__text-decoration {
-    color: $red;
-  }
+.banner__text-decoration {
+  color: $red;
 }
 
 .banner__text-lines {
   font-size: 17px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+// Informations
+
+.banner__informations-blur {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  background-color: $bluredBlack;
+  top: 0;
+  left: 0;
+  z-index: 25;
+}
+
+.banner__informations {
+  position: absolute;
+  background-color: $lightBlack;
+  width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+
+  @include after {
+    @include darker;
+
+    background-color: $black;
+    opacity: 0.3;
+  }
+}
+
+.banner__video-holder {
+  min-height: 370px;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.banner__info-video {
+  position: relative;
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.banner__video-text {
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  transform: translate(-20%, -10%);
+  color: $white;
+  z-index: 20;
+}
+
+.banner__video-title {
+  font-size: 40px;
+  font-weight: $bold;
+  line-height: 45px;
+}
+
+.banner__informations-text {
+  position: relative;
+  color: $white;
+  z-index: 20;
+  padding: 15px 20px;
+}
+
+.banner__informations-task {
+  display: block;
+  font-size: 20px;
+  font-weight: $semi;
+  margin-bottom: 25px;
+}
+
+.banner__informations-lines {
   line-height: 25px;
   margin-bottom: 20px;
 }
