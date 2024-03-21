@@ -1,7 +1,6 @@
 import View from "./view.js";
 
-class EffectsView extends View{
-  banner = document.querySelector(".js-banner");
+class EffectsView extends View {
   searchSign = document.querySelector(".js-searchSign");
   infoBtn = document.querySelector(".js-info-btn");
   closeCloudBtn;

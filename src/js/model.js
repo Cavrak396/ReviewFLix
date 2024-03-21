@@ -1,11 +1,9 @@
-export const getGanre = async function (wicher) {
+export const getGanre = async function (motion) {
   try {
     const getHTTP = await fetch(
-      `https://api.tvmaze.com/search/shows?q=witcher`
+      `https://api.tvmaze.com/search/shows?q=${motion}`
     );
     const getFilm = await getHTTP.json();
-
-    console.log(getFilm);
     return getFilm;
   } catch {}
 };

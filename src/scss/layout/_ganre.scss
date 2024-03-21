@@ -1,0 +1,145 @@
+.ganre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  background-color: $bluredBlack;
+}
+
+.ganre__holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+  width: 90%;
+  height: 800px;
+  background-color: $lightBlack;
+  color: $white;
+}
+
+.ganre__line {
+  display: flex;
+}
+
+.ganre__image-holder {
+  position: relative;
+  max-width: 30%;
+  flex: 1 1 30%;
+  height: 800px;
+  overflow: hidden;
+
+  @include background;
+
+  @include after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 30;
+    background: linear-gradient(to left, $lightBlack, transparent);
+  }
+}
+
+.ganre__review {
+  max-width: 70%;
+  flex: 1 1 70%;
+  padding: 20px;
+}
+
+.ganre__review-decoration {
+  color: $red;
+}
+
+.ganre__review-present {
+  display: block;
+  font-weight: $semi;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.ganre__review-ganre {
+  font-size: 30px;
+  text-align: center;
+  font-weight: $bold;
+  margin-bottom: 20px;
+}
+
+.ganre__review-text {
+  margin-bottom: 40px;
+
+  p {
+    font-size: 17px;
+    line-height: 25px;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto 15px auto;
+    opacity: 0.8;
+  }
+}
+
+.ganre__review-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.ganre__review-list {
+  margin-right: 40px;
+}
+
+.ganre__review-item {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.genre__review-smooth {
+  opacity: 0.5;
+}
+
+.ganre__options {
+  display: flex;
+  justify-content: center;
+}
+
+.ganre__play-series {
+  display: inline-block;
+  background-color: $white;
+  padding: 10px 20px;
+  color: $black;
+  border-radius: 10px;
+  margin-right: 20px;
+
+  @include hover {
+    cursor: pointer;
+    transition: $normal;
+    opacity: 0.7;
+  }
+}
+
+.ganre__play-line {
+  display: flex;
+  align-items: center;
+  font-weight: $semi;
+}
+
+.ganre__option-image {
+  max-width: 30px;
+  max-height: 30px;
+  flex: 1 1 50px;
+  margin-right: 15px;
+}
+
+.ganre__play-tag {
+  font-size: 18px;
+}
+
+.ganre__like-image {
+  max-width: 80%;
+  max-height: 80%;
+}
