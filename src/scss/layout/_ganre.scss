@@ -15,9 +15,10 @@
   transform: translate(-50%, -50%);
   z-index: 25;
   width: 90%;
-  height: 800px;
+  max-height: 800px;
   background-color: $lightBlack;
   color: $white;
+  overflow-y: auto;
 }
 
 .ganre__line {
@@ -25,7 +26,9 @@
 }
 
 .ganre__image-holder {
-  position: relative;
+  position: sticky;
+  left: 0;
+  top: 0;
   max-width: 30%;
   flex: 1 1 30%;
   height: 800px;
@@ -49,6 +52,7 @@
   max-width: 70%;
   flex: 1 1 70%;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .ganre__review-decoration {
@@ -142,4 +146,84 @@
 .ganre__like-image {
   max-width: 80%;
   max-height: 80%;
+}
+
+.ganre__recommendations {
+  padding: 40px 0;
+}
+
+.ganre__recommendations-link {
+  color: $white;
+  opacity: 0.9;
+}
+
+.ganre__recommendations-tag {
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ganre__recommendations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ganre__recommendations-item {
+  margin: 0 5px 20px 5px;
+  max-width: calc(25% - 10px);
+  flex: 1 1 calc(25% - 10px);
+  border-radius: 7px;
+}
+
+.ganre__recommendations-image {
+  position: relative;
+  min-height: 200px;
+  border-radius: 10px 10px 0 0;
+
+  @include background;
+}
+
+.ganre__recommendations-text {
+  padding: 10px;
+  background-color: $deepGray;
+  min-height: 200px;
+  border-radius: 0 0 10px 10px;
+}
+
+.ganre__recommendations-subtitle {
+  display: flex;
+  align-items: center;
+  color: $white;
+  margin-bottom: 10px;
+}
+
+.ganre__recommendations-average {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 15px;
+  border: $easeWhite solid 1px;
+  padding: 2px 5px;
+}
+
+.ganre__recommendations-star {
+  max-width: 20px;
+  max-height: 20px;
+  flex: 1 1 27px;
+  filter: invert(100%);
+  margin-right: 5px;
+}
+
+.ganre__recommendations-title {
+  margin-bottom: 15px;
+  font-size: 17px;
+  font-weight: $semi;
+}
+
+.ganre__recommendations-about {
+  p {
+    line-height: 20px;
+    font-size: 15px;
+  }
 }

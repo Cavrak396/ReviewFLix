@@ -1,9 +1,11 @@
 import View from "./view.js";
 
 class GanreView extends View {
+  closeBtn;
+
   _generateGanre(data) {
     const markup = `
-        <section class="ganre">
+        <section class="ganre js-ganre">
         <div class="ganre__holder">
         <div class="ganre__line">
         <div class="ganre__image-holder" style="background-image: url('${
@@ -41,6 +43,9 @@ class GanreView extends View {
          </ul>
          </div>
          <div class="ganre__options"> 
+         <button type="button" class="ganre__close-btn js-close-ganre">
+         <img src="images/close.png" alt="close image" class="ganre-closeImg">
+         </button> 
          <a href="${
            data[0].show.officialSite
          }" target="_blank" class="ganre__play-series"> 
@@ -55,6 +60,12 @@ class GanreView extends View {
          <img src="images/like.png" class="ganre__like-image" alt="like">
          </button>
          </div>
+         <div class="ganre__recommendations">
+         <span class="ganre__recommendations-tag"> You might like this too </span>
+          <div class="ganre__recommendations-recommended">
+          ${this._getRecommendations(data)}
+          </div>
+         </div>
         </div>
         </div>
         </div>
@@ -62,6 +73,73 @@ class GanreView extends View {
         `;
 
     this.banner.insertAdjacentHTML("afterbegin", markup);
+    this.closeBtn = document.querySelector(".js-close-ganre");
+    this._closeGanre();
+  }
+
+  _getRecommendations(data) {
+    return `
+      <ul class="ganre__recommendations-list">
+        ${data
+          .map((dataItem) => {
+            const imageUrl =
+              dataItem.show &&
+              dataItem.show.image &&
+              dataItem.show.image.original
+                ? dataItem.show.image.original
+                : "images/default-image-url.jpg";
+            const ratingAverage =
+              dataItem.show &&
+              dataItem.show.rating &&
+              dataItem.show.rating.average
+                ? dataItem.show.rating.average
+                : "N/A";
+            const premieredYear =
+              dataItem.show && dataItem.show.premiered
+                ? dataItem.show.premiered.slice(0, 4)
+                : "N/A";
+
+            return `<li class="ganre__recommendations-item">
+              <a href="${
+                dataItem.show.name
+              }" class="ganre__recommendations-link"> 
+                <div class="ganre__recommendations-image" style="background-image: url('${imageUrl}')"></div>
+                <div class="ganre__recommendations-text">
+                  <div class="ganre__recommendations-subtitle"> 
+                    <span class="ganre__recommendations-average">
+                      <img src="images/star.png" alt="star image" class="ganre__recommendations-star">
+                      <span class="ganre__recommendations-rating">${ratingAverage}</span>
+                    </span>
+                    <span class="ganre__recommendations-date">${premieredYear}</span>
+                  </div>
+                  <div class="ganre__recommendations-description">
+                    <h3 class="ganre__recommendations-title">${
+                      dataItem.show.name
+                    }</h3>
+                    <span class="ganre__recommendations-about">
+                    ${
+                      dataItem.show && typeof dataItem.show.summary === "string"
+                        ? dataItem.show.summary.length > 100
+                          ? dataItem.show.summary.slice(0, 100) + "..."
+                          : dataItem.show.summary
+                        : "This content has not description."
+                    }
+                  </span>
+                  </div>
+                </div>
+              </a>
+            </li>`;
+          })
+          .slice(1)
+          .join("")}
+      </ul>
+    `;
+  }
+
+  _closeGanre() {
+    this.closeBtn.addEventListener("click", () => {
+      this.closeBtn.closest(".js-ganre").remove();
+    });
   }
 }
 
