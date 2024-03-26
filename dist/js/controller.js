@@ -5,18 +5,26 @@ import ganreView from "./view/ganreView.js";
 
 const handleGanre = async function () {
   try {
-    const searchResult = await searchView._getSearch();
-    const ganre = await model.getGanre(searchResult);
-    ganreView._generateGanre(ganre);  
-    console.log(ganre);
-  } catch {}
+    const id = window.location.hash.slice(1);
+    const data = await model.getGanre(id);
+
+    if (!id) return;
+
+    ganreView._generateGanre(data);
+
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching genres:", error);
+  }
 };
 
-const handleEffect = function () {
+const init = function () {
   effectsView._activateSearch();
   effectsView._focusSearch();
   effectsView._generateInformations();
+  searchView._getSearch();
+  searchView._getHashLocation(handleGanre);
+ // ganreView._handleLikes();
 };
 
-handleGanre();
-handleEffect();
+init();

@@ -35,6 +35,14 @@ button {
   }
 }
 
+.header__bookmarks-btn {
+  @include hover {
+    .header__bookmarks-list {
+      opacity: 1;
+    }
+  }
+}
+
 .banner__seachImage,
 .banner__infoImage {
   max-width: 18px;

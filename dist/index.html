@@ -20,28 +20,32 @@
                 <span class="header__logo">RewieFlix</span>
                 <div class="header__search-bar">
                     <form class="header__search-form">
-                        <input type="search" class="header__search-input js-search" placeholder="Titles...">
+                        <input type="text" class="header__search-input js-search" placeholder="Titles...">
                         <button type="button" class="header__search-button js-searchBtn">
                             <img src="images/search-image.png" class="header__search-symbol" alt="search image">
                         </button>
                     </form>
-                    <button type="button" class="header__bookmarks">
-                        <img src="images/bookmark-image.png" class="header__bookmarks" alt="search image">
+                    <button type="button" class="header__bookmarks-btn">
+                        <img src="images/bookmark-image.png" class="header__bookmarks-img" alt="search image">
                     </button>
+                    <ul class="header__bookmarks-list js-bookmarks-list"></ul>
                 </div>
             </div>
         </div>
     </header>
     <main>
         <section class="banner js-banner">
+            <div class="banner__ganre js-banner__ganre"></div>
             <video control autoplay muted loop src="images/mainPage-video.mp4" class="banner__video"></video>
             <div class="banner__text-container">
                 <span class="banner__text-above">Ganre info</span>
                 <h1 class="banner__text-title"><span class="banner__text-decoration">Rewie</span>Flix</h1>
                 <p class="banner__text-lines">
-                    Explore the world of the latest series and movies all in one place! Our app brings you everything
+                    Explore the world of the latest series and movies all in one place! Our app brings you
+                    everything
                     you need to enjoy the world of top-notch entertainment. Whether you're into gripping drama,
-                    hilarious comedies, or thrilling action movies, we've got it all! Discover the newest episodes of
+                    hilarious comedies, or thrilling action movies, we've got it all! Discover the newest episodes
+                    of
                     your favorite series, explore the latest movie titles, check out ratings, stay updated with the
                     latest entertainment news - all with our app.
                 </p>
@@ -58,7 +62,6 @@
             </div>
         </section>
     </main>
-
 </body>
 
 </html>

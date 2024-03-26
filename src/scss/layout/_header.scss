@@ -19,10 +19,22 @@
 }
 
 .header__search-symbol,
-.header__bookmarks {
+.header__bookmarks-img {
   width: 28px;
   height: 28px;
   filter: invert(100%);
+}
+
+.header__bookmarks-list {
+  position: absolute;
+  right: 10px;
+  bottom: -216px;
+  width: 300px;
+  min-height: 200px;
+  background-color: $deepGray;
+  border-radius: 10px;
+  // opacity: 0;
+  transition: $normal;
 }
 
 .header__search-input {
@@ -33,6 +45,22 @@
   opacity: 0;
   transition: $normal;
   color: $white;
+}
+
+.header__liked-items {
+  display: flex;
+  align-items: center;
+}
+
+.header__liked-image {
+  max-width: 30%;
+  flex: 1 1 30%;
+  max-height: 100px;
+}
+
+.header__liked-text {
+  max-width: 70%;
+  flex: 1 1 70%;
 }
 
 .activate-input {

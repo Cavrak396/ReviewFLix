@@ -1,3 +1,5 @@
+export const likedContent = [];
+
 export const getGanre = async function (motion) {
   try {
     const getHTTP = await fetch(

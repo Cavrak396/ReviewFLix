@@ -190,6 +190,10 @@ button {
   filter: invert(100%);
 }
 
+.header__bookmarks-btn:hover .header__bookmarks-list {
+  opacity: 1;
+}
+
 .banner__seachImage,
 .banner__infoImage {
   max-width: 18px;
@@ -287,10 +291,21 @@ button {
 }
 
 .header__search-symbol,
-.header__bookmarks {
+.header__bookmarks-img {
   width: 28px;
   height: 28px;
   filter: invert(100%);
+}
+
+.header__bookmarks-list {
+  position: absolute;
+  right: 10px;
+  bottom: -216px;
+  width: 300px;
+  min-height: 200px;
+  background-color: rgb(47, 47, 47);
+  border-radius: 10px;
+  transition: 0.3s all ease-in-out;
 }
 
 .header__search-input {
@@ -301,6 +316,22 @@ button {
   opacity: 0;
   transition: 0.3s all ease-in-out;
   color: rgb(255, 255, 255);
+}
+
+.header__liked-items {
+  display: flex;
+  align-items: center;
+}
+
+.header__liked-image {
+  max-width: 30%;
+  flex: 1 1 30%;
+  max-height: 100px;
+}
+
+.header__liked-text {
+  max-width: 70%;
+  flex: 1 1 70%;
 }
 
 .activate-input {
