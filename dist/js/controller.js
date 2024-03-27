@@ -2,6 +2,7 @@ import * as model from "./model.js";
 import effectsView from "./view/effectsView.js";
 import searchView from "./view/searchView.js";
 import ganreView from "./view/ganreView.js";
+import bookmarksView from "./view/bookmarksView.js";
 
 const handleGanre = async function () {
   try {
@@ -10,7 +11,7 @@ const handleGanre = async function () {
 
     if (!id) return;
 
-    ganreView._generateGanre(data);
+    ganreView._generateGanre(data, bookmarksView._handleLikes);
 
     console.log(data);
   } catch (error) {
@@ -24,7 +25,7 @@ const init = function () {
   effectsView._generateInformations();
   searchView._getSearch();
   searchView._getHashLocation(handleGanre);
- // ganreView._handleLikes();
+  // ganreView._handleLikes();
 };
 
 init();

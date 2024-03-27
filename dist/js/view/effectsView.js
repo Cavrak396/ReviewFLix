@@ -45,8 +45,10 @@ class EffectsView extends View {
     I'm excited to see where this project goes and how it helps us all discover awesome new entertainment together.
     Thanks for your support!
     </p>
-
     </div>
+    <div class="banner__informations-developer">
+     <img class="banner__informations-image" alt="developer image" src="images/profile-photo-color.jpg"> 
+     <span class="banner__informations-name"> Marko Cavrak </span>
     </div>
     </div>
     `;

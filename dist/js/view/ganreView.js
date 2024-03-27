@@ -1,10 +1,7 @@
 import View from "./view.js";
 
 class GanreView extends View {
-  closeBtn;
-  likedBtn;
-
-  _generateGanre(data) {
+  _generateGanre(data, handler, bookmarkRemover) {
     const markup = `
         <section class="ganre js-ganre">
         <div class="ganre__holder">
@@ -16,7 +13,7 @@ class GanreView extends View {
         <div class="ganre__review">
          <span class="ganre__review-present"> <span class="ganre__review-decoration">Review</span>Flix present</span>
          <h2 class="ganre__review-ganre js-ganre-name">${data[0].show.name}</h2>
-         <div class="ganre__review-text">${
+         <div class="ganre__review-text js-text">${
            data[0].show.summary
              ? data[0].show.summary
              : "This content have not any description."
@@ -43,7 +40,7 @@ class GanreView extends View {
           <li class="ganre__review-item"><span class="genre__review-smooth">Premiered date:</span> ${
             data[0].show.premiered
           }</li>
-          <li class="ganre__review-item"><span class="genre__review-smooth">Web channel:</span> ${
+          <li class="ganre__review-item js-webchannel"><span class="genre__review-smooth">Web channel:</span> ${
             data[0].show.webChannel
               ? data[0].show.webChannel.name
               : "No information about web channel"
@@ -84,7 +81,9 @@ class GanreView extends View {
     this.bannerGanre.insertAdjacentHTML("afterbegin", markup);
     this.closeBtn = document.querySelector(".js-close-ganre");
     this.likedBtn = document.querySelector(".js-like-btn");
-    this._handleLikes();
+
+    const boundHandler = handler.bind(this);
+    boundHandler();
     this._closeGanre();
   }
 
@@ -147,39 +146,10 @@ class GanreView extends View {
     `;
   }
 
-  _handleLikes(storage) {
-    this.likedBtn.addEventListener("click", () => {
-      const name = this.likedBtn
-        .closest(".js-ganre")
-        .querySelector(".js-ganre-name").textContent;
-
-      const genres = this.likedBtn
-        .closest(".js-ganre")
-        .querySelector(".js-genres").textContent;
-
-      const contentImage = this.likedBtn
-        .closest(".js-ganre")
-        .querySelector(".js-film-image").style.backgroundImage;
-
-      const imageUrl = contentImage.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
-
-      const markup = `
-      <li class="header__liked-items"> 
-      <img src="${imageUrl}" alt="film image" class="header__liked-image">
-      <div class="header__liked-text">
-      <span class="header__liked-name"> ${name} </span>
-      <span class="header__liked-genres"> ${genres} </span>
-      </div>
-      </li>
-      `;
-
-      this.likedList.insertAdjacentHTML("afterbegin", markup);
-    });
-  }
-
   _closeGanre() {
     this.closeBtn.addEventListener("click", () => {
       this.closeBtn.closest(".js-ganre").remove();
+      window.location.hash = "";
     });
   }
 }

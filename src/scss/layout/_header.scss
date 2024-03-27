@@ -18,6 +18,7 @@
   font-weight: $semi;
 }
 
+// Bookmarks
 .header__search-symbol,
 .header__bookmarks-img {
   width: 28px;
@@ -28,11 +29,11 @@
 .header__bookmarks-list {
   position: absolute;
   right: 10px;
-  bottom: -216px;
-  width: 300px;
-  min-height: 200px;
-  background-color: $deepGray;
-  border-radius: 10px;
+  top: 58px;
+  width: 400px;
+  min-height: 130px;
+  background-color: $black;
+  border-top: 1px solid $white;
   // opacity: 0;
   transition: $normal;
 }
@@ -47,23 +48,63 @@
   color: $white;
 }
 
-.header__liked-items {
+.header__liked-item {
   display: flex;
   align-items: center;
+  transition: $normal;
+
+  @include hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
 }
 
 .header__liked-image {
-  max-width: 30%;
-  flex: 1 1 30%;
-  max-height: 100px;
+  max-width: 27%;
+  flex: 1 1 27%;
+  max-height: 130px;
 }
 
 .header__liked-text {
-  max-width: 70%;
-  flex: 1 1 70%;
+  max-width: 73%;
+  flex: 1 1 73%;
 }
 
 .activate-input {
   width: 230px;
+  opacity: 0.8;
+}
+
+.header__liked-text {
+  padding-left: 10px;
+}
+
+.header__liked-genres,
+.header__liked-name,
+.header__liked-webchannel,
+.header__liked-lines {
+  display: block;
+  color: $white;
+}
+
+.header__liked-name {
+  font-size: 17px;
+  font-weight: $semi;
+  margin-bottom: 7px;
+}
+
+.header__liked-name {
+  line-height: 20px;
+}
+
+.header__liked-genres,
+.header__liked-webchannel,
+.header__liked-lines {
+  line-height: 18px;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.header__liked-lines {
   opacity: 0.8;
 }

@@ -54,7 +54,7 @@
 // Informations
 
 .banner__informations-blur {
-  position: absolute;
+  position: fixed;
   width: 100%;
   min-height: 100%;
   background-color: $bluredBlack;
@@ -67,9 +67,9 @@
   position: absolute;
   background-color: $lightBlack;
   width: 700px;
-  top: 50%;
+  top: 50px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0px);
   z-index: 25;
 
   @include after {
@@ -124,4 +124,19 @@
 .banner__informations-lines {
   line-height: 25px;
   margin-bottom: 20px;
+}
+
+.banner__informations-image {
+  display: block;
+  max-width: 400px;
+  max-height: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.banner__informations-name {
+  display: block;
+  padding: 10px 0;
+  color: $white;
+  text-align: center;
 }
