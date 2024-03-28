@@ -179,6 +179,12 @@ button {
   transition: 0.3s all ease-in-out;
   font-weight: 600;
 }
+@media screen and (max-width: 767px) {
+  .banner__text-search,
+  .banner__text-info {
+    font-size: 15px;
+  }
+}
 
 .banner__text-search {
   background-color: rgb(255, 255, 255);
@@ -188,6 +194,11 @@ button {
 .banner__text-search:hover {
   background-color: rgba(192, 192, 192, 0.5);
   filter: invert(100%);
+}
+@media screen and (max-width: 767px) {
+  .banner__text-search {
+    margin-right: 10px;
+  }
 }
 
 .header__bookmarks-btn:hover .header__bookmarks-list {
@@ -269,6 +280,13 @@ button {
 .ganre__like-button:hover::after {
   opacity: 1;
 }
+@media screen and (max-width: 767px) {
+  .ganre__like-button {
+    max-width: 40px;
+    flex: 1 1 40px;
+    height: 40px;
+  }
+}
 
 .header__liked-closer {
   position: absolute;
@@ -303,6 +321,11 @@ button {
   color: rgb(229, 9, 20);
   font-weight: 600;
 }
+@media screen and (max-width: 767px) {
+  .header__logo {
+    font-size: 20px;
+  }
+}
 
 .header__search-symbol,
 .header__bookmarks-img {
@@ -319,6 +342,7 @@ button {
   min-height: 130px;
   background-color: rgb(1, 1, 1);
   border-top: 1px solid rgb(255, 255, 255);
+  opacity: 0;
   transition: 0.3s all ease-in-out;
 }
 
@@ -356,6 +380,11 @@ button {
 .activate-input {
   width: 230px;
   opacity: 0.8;
+}
+@media screen and (max-width: 767px) {
+  .activate-input {
+    width: 120px;
+  }
 }
 
 .header__liked-text {
@@ -417,6 +446,9 @@ button {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .banner__text-container {
@@ -428,16 +460,33 @@ button {
   max-width: 700px;
   z-index: 20;
 }
+@media screen and (max-width: 1200px) {
+  .banner__text-container {
+    padding-left: 10px;
+  }
+}
 
 .banner__text-above,
 .banner__text-title {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 767px) {
+  .banner__text-above {
+    font-size: 12px;
+  }
+}
+
 .banner__text-title {
   font-size: 120px;
   font-weight: 700;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .banner__text-title {
+    font-size: 50px;
+    margin-bottom: 5px;
+  }
 }
 
 .banner__text-decoration {
@@ -448,6 +497,12 @@ button {
   font-size: 17px;
   line-height: 25px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .banner__text-lines {
+    font-size: 15px;
+    line-height: 22px;
+  }
 }
 
 .banner__informations-blur {
@@ -480,11 +535,21 @@ button {
   background-color: rgb(1, 1, 1);
   opacity: 0.3;
 }
+@media screen and (max-width: 767px) {
+  .banner__informations {
+    width: 400px;
+  }
+}
 
 .banner__video-holder {
   min-height: 370px;
   position: relative;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px rgb(20, 20, 20);
+}
+@media screen and (max-width: 767px) {
+  .banner__video-holder {
+    min-height: 215px;
+  }
 }
 
 .banner__info-video {
@@ -507,6 +572,13 @@ button {
   font-weight: 700;
   line-height: 45px;
 }
+@media screen and (max-width: 767px) {
+  .banner__video-title {
+    font-size: 27px;
+    line-height: 31px;
+    max-width: 242px;
+  }
+}
 
 .banner__informations-text {
   position: relative;
@@ -521,10 +593,21 @@ button {
   font-weight: 600;
   margin-bottom: 25px;
 }
+@media screen and (max-width: 767px) {
+  .banner__informations-task {
+    font-size: 17px;
+  }
+}
 
 .banner__informations-lines {
   line-height: 25px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .banner__informations-lines {
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 
 .banner__informations-image {
@@ -533,6 +616,12 @@ button {
   max-height: 300px;
   margin: 0 auto;
   border-radius: 20px;
+}
+@media screen and (max-width: 767px) {
+  .banner__informations-image {
+    max-width: 286px;
+    max-height: 189px;
+  }
 }
 
 .banner__informations-name {
@@ -564,9 +653,19 @@ button {
   color: rgb(255, 255, 255);
   overflow-y: auto;
 }
+@media screen and (max-width: 767px) {
+  .ganre__holder {
+    max-height: 625px;
+  }
+}
 
 .ganre__line {
   display: flex;
+}
+@media screen and (max-width: 1200px) {
+  .ganre__line {
+    flex-direction: column;
+  }
 }
 
 .ganre__image-holder {
@@ -591,12 +690,36 @@ button {
   z-index: 30;
   background: linear-gradient(to left, rgb(20, 20, 20), transparent);
 }
+@media screen and (max-width: 1200px) {
+  .ganre__image-holder::after {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .ganre__image-holder {
+    position: static;
+    max-width: 100%;
+    flex: 1 1 100%;
+    min-height: 650px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .ganre__image-holder {
+    min-height: 300px;
+  }
+}
 
 .ganre__review {
   max-width: 70%;
   flex: 1 1 70%;
   padding: 20px;
   overflow-y: auto;
+}
+@media screen and (max-width: 1200px) {
+  .ganre__review {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .ganre__review-decoration {
@@ -610,12 +733,22 @@ button {
   font-size: 15px;
   margin-bottom: 7px;
 }
+@media screen and (max-width: 767px) {
+  .ganre__review-present {
+    font-size: 12px;
+  }
+}
 
 .ganre__review-ganre {
   font-size: 30px;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .ganre__review-ganre {
+    font-size: 23px;
+  }
 }
 
 .ganre__review-text {
@@ -629,20 +762,48 @@ button {
   margin: 0 auto 15px auto;
   opacity: 0.8;
 }
+@media screen and (max-width: 767px) {
+  .ganre__review-text p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
 
 .ganre__review-info {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
 }
+@media screen and (max-width: 767px) {
+  .ganre__review-info {
+    flex-wrap: wrap;
+  }
+}
 
 .ganre__review-list {
   margin-right: 40px;
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+.ganre__review-list:nth-child(2) {
+  margin-right: 0;
+}
+@media screen and (max-width: 767px) {
+  .ganre__review-list {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .ganre__review-item {
   font-size: 15px;
   margin-bottom: 10px;
+}
+@media screen and (max-width: 767px) {
+  .ganre__review-item {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
 }
 
 .genre__review-smooth {
@@ -652,6 +813,7 @@ button {
 .ganre__options {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .ganre__play-series {
@@ -667,6 +829,12 @@ button {
   transition: 0.3s all ease-in-out;
   opacity: 0.7;
 }
+@media screen and (max-width: 767px) {
+  .ganre__play-series {
+    padding: 14px 20px;
+    margin-right: 10px;
+  }
+}
 
 .ganre__play-line {
   display: flex;
@@ -680,9 +848,22 @@ button {
   flex: 1 1 50px;
   margin-right: 15px;
 }
+@media screen and (max-width: 767px) {
+  .ganre__option-image {
+    max-width: 20px;
+    max-height: 20px;
+    flex: 1 1 20px;
+    margin-right: 5px;
+  }
+}
 
 .ganre__play-tag {
   font-size: 18px;
+}
+@media screen and (max-width: 767px) {
+  .ganre__play-tag {
+    font-size: 15px;
+  }
 }
 
 .ganre__like-image {
@@ -717,6 +898,18 @@ button {
   flex: 1 1 calc(25% - 10px);
   border-radius: 7px;
 }
+@media screen and (max-width: 1200px) {
+  .ganre__recommendations-item {
+    max-width: calc(33.33% - 10px);
+    flex: 1 1 calc(33.33% - 10px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .ganre__recommendations-item {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
 
 .ganre__recommendations-image {
   position: relative;
@@ -732,6 +925,11 @@ button {
   background-color: rgb(47, 47, 47);
   min-height: 200px;
   border-radius: 0 0 10px 10px;
+}
+@media screen and (max-width: 767px) {
+  .ganre__recommendations-text {
+    min-height: 147px;
+  }
 }
 
 .ganre__recommendations-subtitle {
@@ -749,6 +947,11 @@ button {
   border: rgba(255, 255, 255, 0.6) solid 1px;
   padding: 2px 5px;
 }
+@media screen and (max-width: 767px) {
+  .ganre__recommendations-average {
+    margin-right: 6px;
+  }
+}
 
 .ganre__recommendations-star {
   max-width: 20px;
@@ -757,14 +960,42 @@ button {
   filter: invert(100%);
   margin-right: 5px;
 }
+@media screen and (max-width: 767px) {
+  .ganre__recommendations-star {
+    max-width: 15px;
+    max-height: 15px;
+    flex: 1 1 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ganre__recommendations-rating {
+    font-size: 14px;
+  }
+}
+
+.ganre__recommendations-date {
+  font-size: 14px;
+}
 
 .ganre__recommendations-title {
   margin-bottom: 15px;
   font-size: 17px;
   font-weight: 600;
 }
+@media screen and (max-width: 767px) {
+  .ganre__recommendations-title {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+}
 
 .ganre__recommendations-about p {
   line-height: 20px;
   font-size: 15px;
+}
+@media screen and (max-width: 767px) {
+  .ganre__recommendations-about p {
+    font-size: 14px;
+  }
 }

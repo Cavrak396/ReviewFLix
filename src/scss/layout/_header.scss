@@ -16,6 +16,10 @@
   font-size: 30px;
   color: $red;
   font-weight: $semi;
+
+  @include phone {
+    font-size: 20px;
+  }
 }
 
 // Bookmarks
@@ -34,7 +38,7 @@
   min-height: 130px;
   background-color: $black;
   border-top: 1px solid $white;
-  // opacity: 0;
+  opacity: 0;
   transition: $normal;
 }
 
@@ -73,6 +77,10 @@
 .activate-input {
   width: 230px;
   opacity: 0.8;
+
+  @include phone {
+    width: 120px;
+  }
 }
 
 .header__liked-text {

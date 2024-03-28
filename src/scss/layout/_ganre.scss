@@ -19,10 +19,18 @@
   background-color: $lightBlack;
   color: $white;
   overflow-y: auto;
+
+  @include phone {
+    max-height: 625px;
+  }
 }
 
 .ganre__line {
   display: flex;
+
+  @include tablet {
+    flex-direction: column;
+  }
 }
 
 .ganre__image-holder {
@@ -45,6 +53,21 @@
     width: 50px;
     z-index: 30;
     background: linear-gradient(to left, $lightBlack, transparent);
+
+    @include tablet {
+      display: none; // check letter
+    }
+  }
+
+  @include tablet {
+    position: static;
+    max-width: 100%;
+    flex: 1 1 100%;
+    min-height: 650px;
+  }
+
+  @include phone {
+    min-height: 300px;
   }
 }
 
@@ -53,6 +76,11 @@
   flex: 1 1 70%;
   padding: 20px;
   overflow-y: auto;
+
+  @include tablet {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .ganre__review-decoration {
@@ -65,6 +93,10 @@
   text-align: center;
   font-size: 15px;
   margin-bottom: 7px;
+
+  @include phone {
+    font-size: 12px;
+  }
 }
 
 .ganre__review-ganre {
@@ -72,6 +104,10 @@
   text-align: center;
   font-weight: $bold;
   margin-bottom: 20px;
+
+  @include phone {
+    font-size: 23px;
+  }
 }
 
 .ganre__review-text {
@@ -84,6 +120,11 @@
     text-align: center;
     margin: 0 auto 15px auto;
     opacity: 0.8;
+
+    @include phone {
+      font-size: 14px;
+      line-height: 21px;
+    }
   }
 }
 
@@ -91,15 +132,35 @@
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+
+  @include phone {
+    flex-wrap: wrap;
+  }
 }
 
 .ganre__review-list {
   margin-right: 40px;
+  max-width: 300px;
+  flex: 1 1 300px;
+
+  &:nth-child(2) {
+    margin-right: 0;
+  }
+
+  @include phone {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .ganre__review-item {
   font-size: 15px;
   margin-bottom: 10px;
+
+  @include phone {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
 }
 
 .genre__review-smooth {
@@ -109,6 +170,7 @@
 .ganre__options {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .ganre__play-series {
@@ -124,6 +186,11 @@
     transition: $normal;
     opacity: 0.7;
   }
+
+  @include phone {
+    padding: 14px 20px;
+    margin-right: 10px;
+  }
 }
 
 .ganre__play-line {
@@ -137,10 +204,21 @@
   max-height: 30px;
   flex: 1 1 50px;
   margin-right: 15px;
+
+  @include phone {
+    max-width: 20px;
+    max-height: 20px;
+    flex: 1 1 20px;
+    margin-right: 5px;
+  }
 }
 
 .ganre__play-tag {
   font-size: 18px;
+
+  @include phone {
+    font-size: 15px;
+  }
 }
 
 .ganre__like-image {
@@ -174,6 +252,16 @@
   max-width: calc(25% - 10px);
   flex: 1 1 calc(25% - 10px);
   border-radius: 7px;
+
+  @include tablet {
+    max-width: calc(33.33% - 10px);
+    flex: 1 1 calc(33.33% - 10px);
+  }
+
+  @include phone {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 .ganre__recommendations-image {
@@ -189,6 +277,10 @@
   background-color: $deepGray;
   min-height: 200px;
   border-radius: 0 0 10px 10px;
+
+  @include phone {
+    min-height: 147px;
+  }
 }
 
 .ganre__recommendations-subtitle {
@@ -205,6 +297,10 @@
   font-size: 15px;
   border: $easeWhite solid 1px;
   padding: 2px 5px;
+
+  @include phone {
+    margin-right: 6px;
+  }
 }
 
 .ganre__recommendations-star {
@@ -213,17 +309,42 @@
   flex: 1 1 27px;
   filter: invert(100%);
   margin-right: 5px;
+
+  @include phone {
+    max-width: 15px;
+    max-height: 15px;
+    flex: 1 1 15px;
+  }
+}
+
+.ganre__recommendations-rating {
+  @include phone {
+    font-size: 14px;
+  }
+}
+
+.ganre__recommendations-date {
+  font-size: 14px;
 }
 
 .ganre__recommendations-title {
   margin-bottom: 15px;
   font-size: 17px;
   font-weight: $semi;
+
+  @include phone {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
 }
 
 .ganre__recommendations-about {
   p {
     line-height: 20px;
     font-size: 15px;
+
+    @include phone {
+      font-size: 14px;
+    }
   }
 }
