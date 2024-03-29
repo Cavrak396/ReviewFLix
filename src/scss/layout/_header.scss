@@ -30,7 +30,7 @@
   filter: invert(100%);
 }
 
-.header__bookmarks-list {
+.header__bookmarks-cloud {
   position: absolute;
   right: 10px;
   top: 58px;
@@ -40,6 +40,23 @@
   border-top: 1px solid $white;
   opacity: 0;
   transition: $normal;
+  z-index: 20;
+
+  @include phone {
+    width: 280px;
+  }
+}
+
+.header__bookmarks-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-size: 15px;
+  opacity: 0.8;
+  line-height: 20px;
+  text-align: center;
 }
 
 .header__search-input {
@@ -53,6 +70,10 @@
 }
 
 .header__liked-item {
+  position: relative;
+}
+
+.header__liked-link {
   display: flex;
   align-items: center;
   transition: $normal;
@@ -115,4 +136,8 @@
 
 .header__liked-lines {
   opacity: 0.8;
+}
+
+.bookmarks-show {
+  opacity: 1;
 }

@@ -4,6 +4,7 @@ export default class View {
   searchField = document.querySelector(".js-search");
   searchBtn = document.querySelector(".js-searchBtn");
   likedList = document.querySelector(".js-bookmarks-list");
-  closeBtn;
+  ganreCloseBtn;
   likedBtn;
+  bookmarksMessage = document.querySelector(".js-bookmark-message");
 }

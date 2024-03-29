@@ -25,6 +25,7 @@ const init = function () {
   effectsView._generateInformations();
   searchView._getSearch();
   searchView._getHashLocation(handleGanre);
+  bookmarksView._showLikedStats();
   // ganreView._handleLikes();
 };
 

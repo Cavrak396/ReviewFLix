@@ -1,7 +1,15 @@
 import View from "./view.js";
 
 class BookmarksView extends View {
-  deleteBtn;
+  likesBtn = document.querySelector(".js-bookmarks-btn");
+  likedCloud = document.querySelector(".js-bookmark-cloud");
+
+  _showLikedStats() {
+    this.likesBtn.addEventListener("click", () => {
+      this.bookmarksMessage.textContent = "There is no any liked motion.";
+      this.likedCloud.classList.toggle("bookmarks-show");
+    });
+  }
 
   _handleLikes(storage) {
     this.likedBtn.addEventListener("click", () => {
@@ -30,6 +38,7 @@ class BookmarksView extends View {
 
       const markup = `
             <li class="header__liked-item js-boomark"> 
+            <a href='#${name}' class="header__liked-link">
             <img src="${imageUrl}" alt="film image" class="header__liked-image">
             <div class="header__liked-text">
             <h3 class="header__liked-name">${name}</h3>
@@ -39,18 +48,24 @@ class BookmarksView extends View {
               webChannel.slice(13) === "Netflix" ? "red" : "orange"
             }">${webChannel.slice(12)}</span>
             </div>
+            </a>
             <button type="button" class="header__liked-closer js-delete-btn">
             <img src="images/close.png" class="header__liked-closeImg" alt="close image"> 
             </button>
             </li>
             `;
 
+      this.bookmarksMessage.style.display = "none";
       this.likedList.insertAdjacentHTML("beforeend", markup);
-    });
-  }
 
-  _deleteBookmark() {
-    console.log("aaaa"); // Check letter
+      const deleteBtns = document.querySelectorAll(".js-delete-btn");
+
+      deleteBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.closest(".js-boomark").remove();
+        });
+      });
+    });
   }
 }
 

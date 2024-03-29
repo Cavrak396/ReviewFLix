@@ -1,7 +1,7 @@
 import View from "./view.js";
 
 class GanreView extends View {
-  _generateGanre(data, handler, bookmarkRemover) {
+  _generateGanre(data, handler) {
     const markup = `
         <section class="ganre js-ganre">
         <div class="ganre__holder">
@@ -79,7 +79,7 @@ class GanreView extends View {
 
     this.bannerGanre.innerHTML = "";
     this.bannerGanre.insertAdjacentHTML("afterbegin", markup);
-    this.closeBtn = document.querySelector(".js-close-ganre");
+    this.ganreCloseBtn = document.querySelector(".js-close-ganre");
     this.likedBtn = document.querySelector(".js-like-btn");
 
     const boundHandler = handler.bind(this);
@@ -147,8 +147,8 @@ class GanreView extends View {
   }
 
   _closeGanre() {
-    this.closeBtn.addEventListener("click", () => {
-      this.closeBtn.closest(".js-ganre").remove();
+    this.ganreCloseBtn.addEventListener("click", () => {
+      this.ganreCloseBtn.closest(".js-ganre").remove();
       window.location.hash = "";
     });
   }
