@@ -55,7 +55,6 @@ class BookmarksView extends View {
             </li>
             `;
 
-      this.bookmarksMessage.style.display = "none";
       this.likedList.insertAdjacentHTML("beforeend", markup);
 
       const deleteBtns = document.querySelectorAll(".js-delete-btn");

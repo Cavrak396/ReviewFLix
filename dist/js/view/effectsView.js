@@ -53,6 +53,7 @@ class EffectsView extends View {
     </div>
     `;
 
+    this._loadingScreen();
     this.banner.insertAdjacentHTML("afterbegin", markup);
     this.closeCloudBtn = document.querySelector(".js-close-cloud");
     this.cloud = document.querySelector(".js-cloud");

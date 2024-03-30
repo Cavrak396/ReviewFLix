@@ -1,3 +1,8 @@
+.header {
+  position: relative;
+  z-index: 35;
+}
+
 .header__line {
   position: relative;
   display: flex;
@@ -57,6 +62,7 @@
   opacity: 0.8;
   line-height: 20px;
   text-align: center;
+  z-index: 1;
 }
 
 .header__search-input {
@@ -71,16 +77,17 @@
 
 .header__liked-item {
   position: relative;
+  z-index: 20;
 }
 
 .header__liked-link {
   display: flex;
   align-items: center;
   transition: $normal;
+  background-color: $black;
 
   @include hover {
     cursor: pointer;
-    opacity: 0.8;
   }
 }
 

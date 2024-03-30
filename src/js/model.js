@@ -7,5 +7,7 @@ export const getGanre = async function (motion) {
     );
     const getFilm = await getHTTP.json();
     return getFilm;
-  } catch {}
+  } catch {
+  
+  }
 };

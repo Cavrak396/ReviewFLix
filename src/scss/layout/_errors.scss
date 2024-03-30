@@ -1,0 +1,41 @@
+.erorr__screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $lightBlack;
+  z-index: 30;
+}
+
+.error__text-holder {
+  color: $white;
+  font-size: 14px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+
+.error__developer-message {
+  margin-bottom: 20px;
+  line-height: 19px;
+}
+
+.error__suggestions-tag {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.error__suggestions-list {
+  padding-left: 25px;
+
+  @include phone {
+    padding-left: 0;
+  }
+}
+
+.error__suggestions-item {
+  margin-bottom: 7px;
+  line-height: 18px;
+}

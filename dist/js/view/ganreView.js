@@ -31,7 +31,6 @@ class GanreView extends View {
           <li class="ganre__review-item"><span class="genre__review-smooth">Language:</span> ${
             data[0].show.language
           }</li>
-
          </ul>
          <ul class="ganre__review-list"> 
          <li class="ganre__review-item"><span class="genre__review-smooth">Will be next sesoans?:</span> ${
@@ -77,6 +76,7 @@ class GanreView extends View {
         </section>
         `;
 
+    this._loadingScreen();
     this.bannerGanre.innerHTML = "";
     this.bannerGanre.insertAdjacentHTML("afterbegin", markup);
     this.ganreCloseBtn = document.querySelector(".js-close-ganre");
